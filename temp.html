@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Photo Gallery">
+        <meta name="keywords" content="FeiHo,Photo">
+        <meta name="author" content="Fei Ho">
+        <title>Photo Gallery</title>
+        <link rel="stylesheet" type="text/css" href="./assets/css/vno.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/iconfont.css">
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+        <link rel="icon" href="./favicon.ico">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
+        <link rel="stylesheet" href="./assets/libs/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./assets/css-devportfolio/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css-devportfolio/styles.css">
+        <style>
+          html{height: 100%}
+          body{margin: 0;height: 100%;
+            background: rgba(169,169,169,1);
+          }
+          canvas{
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.8;
+          }
+    </style>
+    </head>
+    <body>
+      <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+      <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#experience">Education Experience</a>
+            </li>
+            <li>
+                <a href="#education">Blog</a>
+            </li>
+            <li>
+                <a href="#projects">Resume</a>
+            </li>
+            <li>
+                <a href="temp.html">Photo Gallery</a>
+            </li>
+        </ul>
+      </header>
+      <div id="experience"  style="position: absolute;">
+        <div id="experience-timeline">
+            <div data-date="1/12 2020">
+                <h3>Employer Name</h3>
+                <h4>Job Title</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                </p>
+            </div>
+
+            <div data-date="September 2015 – September 2016">
+                <h3>Employer Name</h3>
+                <h4>Job Title</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                </p>
+            </div>
+
+            <div data-date="September 2015 – September 2016">
+                <h3>Employer Name</h3>
+                <h4>Job Title</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                </p>
+            </div>
+
+            <div data-date="September 2015 – September 2016">
+              <h3>Employer Name</h3>
+              <h4>Job Title</h4>
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+              </p>
+          </div>
+
+          <div data-date="September 2015 – September 2016">
+            <h3>Employer Name</h3>
+            <h4>Job Title</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+            </p>
+        </div>
+
+        <div data-date="September 2015 – September 2016">
+          <h3>Employer Name</h3>
+          <h4>Job Title</h4>
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+          </p>
+      </div>
+        </div>
+      </div>
+      <canvas id="canvas"></canvas>
+
+      <!-- <script type="text/javascript" src="./assets/js/jquery.min.js"></script> -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- <script type="text/javascript" src="./assets/js/jquery.min.js"></script> -->
+
+      <script src="./assets/js-devportfolio/scripts.min.js"></script>
+      <script src="./assets/js-canvas-nest/index.js"></script>
+    </body>
+</html>
