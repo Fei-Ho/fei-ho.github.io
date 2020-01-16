@@ -1,2 +1,2 @@
 # PersonalPage
-This is my personal personal homepage.
+This is my personal homepage.
