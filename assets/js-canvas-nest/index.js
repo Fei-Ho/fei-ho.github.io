@@ -21,7 +21,7 @@ class Circle {
         //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
         ctx.arc(this.x, this.y, this.r, 0, 360)
         ctx.closePath();
-        ctx.fillStyle = 'rgba(204, 204, 204, 0.4)';
+        ctx.fillStyle = 'rgba(204, 204, 204, 0.8)';
         ctx.fill();
     }
 
@@ -35,7 +35,7 @@ class Circle {
             ctx.moveTo(this.x, this.y);   //起始点
             ctx.lineTo(_circle.x, _circle.y);   //终点
             ctx.closePath();
-            ctx.strokeStyle = 'rgba(204, 204, 204, 0.4)';
+            ctx.strokeStyle = 'rgba(204, 204, 204, 0.8)';
             ctx.stroke();
         }
     }
@@ -63,7 +63,7 @@ class currentCirle extends Circle {
         ctx.arc(this.x, this.y, this.r, 0, 360);
         ctx.closePath();
         //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
-        ctx.fillStyle = 'rgba(255, 77, 54, 0.6)'
+        ctx.fillStyle = 'rgba(255, 77, 54, 0.8)'
         ctx.fill();
 
     }
