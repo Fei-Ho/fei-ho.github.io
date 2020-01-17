@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
         <meta name="description" content="Photo Gallery">
         <meta name="keywords" content="FeiHo,Photo">
         <meta name="author" content="Fei Ho">
@@ -284,9 +284,11 @@
             $(".square_figure_2").css("height",width_2);
             var width_3 = $(".square_figure_3").width();
             $(".square_figure_3").css("height",width_3);
-            $(window).resize(function(){
-                location.reload();
-            });
+        </script>
+        <script>
+            // $(window).resize(function(){
+            //     window.location.reload();
+            // });
         </script>
     </body>
 </html>
