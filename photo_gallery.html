@@ -48,16 +48,32 @@
                 opacity: 0.6;
             }
             /*img展示用的style*/
-            .divContent{
-                width:90px;
+            .square_figure_2{
+                width: 49%;
+                margin: 0;
+                padding:0;
+                border: 0;
+                display: inline-block;
+                overflow:hidden;
+            }
+            .square_figure_3{
+                width: 32%;
                 height: 90px;
+                margin: 0;
+                padding:0;
+                border: 0;
+                display: inline-block;
+            }
+            .divContent{
+                width: 100%;
+                height: 100%;
                 overflow:hidden;
             }
             .divContent img{
                 margin:0;
                 padding:0;
                 width:100%;
-                height: 100%;
+                height:100%;
                 object-fit: cover;
             }
     </style>
@@ -112,15 +128,15 @@
             <div id="experience-timeline">
                 <div data-date="<b>2020年01月05日23:30<br>杭州·湖滨步行街</b>">
                     <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
-                            <a href="./img/HangZhouHuBing/shop.jpg" itemprop="contentUrl" data-size="700x960">
+                        <figure class="square_figure_2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                            <a href="./img/HangZhouHuBing/shop.jpg" itemprop="contentUrl" data-size="700x960">      
                                 <div class="divContent">
-                                    <img src="./img/HangZhouHuBing/shop.jpg" itemprop="thumbnail" alt="Image description"/>
+                                    <img src="./img/HangZhouHuBing/shop.jpg" itemprop="thumbnail" alt="Image description"/>        
                                 </div>
                             </a>
                             <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/HangZhouHuBing/light_street.jpg" itemprop="contentUrl" data-size="720x960">
                                 <div class="divContent">
                                     <img src="./img/HangZhouHuBing/light_street.jpg" itemprop="thumbnail" alt="Image description"/>
@@ -128,8 +144,8 @@
                             </a>
                             <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
                         </figure>
-                        <figure></figure> <!-- 用于换行 -->
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <br>
+                        <figure class="square_figure_2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/HangZhouHuBing/cute_doll.jpg" itemprop="contentUrl" data-size="960x731">
                                 <div class="divContent">
                                     <img src="./img/HangZhouHuBing/cute_doll.jpg" itemprop="thumbnail" alt="Image description"/>
@@ -137,7 +153,7 @@
                             </a>
                             <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/HangZhouHuBing/eat.jpg" itemprop="contentUrl" data-size="960x720">
                                 <div class="divContent">
                                     <img src="./img/HangZhouHuBing/eat.jpg" itemprop="thumbnail" alt="Image description"/>
@@ -150,7 +166,7 @@
 
                 <div data-date="<b>2019年12月13日23:08<br>杭州·浙江理工大学·大剧院</b>">
                     <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/ShiJiaDaXueSheng/group_photo.jpg" itemprop="contentUrl" data-size="960x514">
                                 <div class="divContent">
                                     <img src="./img/ShiJiaDaXueSheng/group_photo.jpg" itemprop="thumbnail" alt="Image description"/>
@@ -158,7 +174,7 @@
                             </a>
                             <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/ShiJiaDaXueSheng/love_monster.jpg" itemprop="contentUrl" data-size="960x847">
                                 <div class="divContent">
                                     <img src="./img/ShiJiaDaXueSheng/love_monster.jpg" itemprop="thumbnail" alt="Image description"/>
@@ -166,8 +182,8 @@
                             </a>
                             <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
                         </figure>
-                        <figure></figure> <!-- 用于换行 -->
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <br>
+                        <figure class="square_figure_2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/ShiJiaDaXueSheng/turn_round.jpg" itemprop="contentUrl" data-size="568x400">
                                 <div class="divContent">
                                     <img src="./img/ShiJiaDaXueSheng/turn_round.jpg" itemprop="thumbnail" alt="Image description"/>
@@ -175,7 +191,7 @@
                             </a>
                             <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/ShiJiaDaXueSheng/trophy.jpg" itemprop="contentUrl" data-size="720x960">
                                 <div class="divContent">
                                     <img src="./img/ShiJiaDaXueSheng/trophy.jpg" itemprop="thumbnail" alt="Image description"/>
@@ -188,65 +204,65 @@
 
                 <div data-date="<b>2019年12月19日12:27<br>杭州·上天竺·法喜寺</b>">
                     <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/FaXiTemple/temple_1.jpg" itemprop="contentUrl" data-size="720x960">
                                 <div class="divContent">
                                     <img src="./img/FaXiTemple/temple_1.jpg" itemprop="thumbnail" alt="Image description"/>
                                 </div>
                             </a>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/FaXiTemple/temple_2.jpg" itemprop="contentUrl" data-size="720x960">
                                 <div class="divContent">
                                     <img src="./img/FaXiTemple/temple_2.jpg" itemprop="thumbnail" alt="Image description"/>
                                 </div>
                             </a>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/FaXiTemple/temple_3.jpg" itemprop="contentUrl" data-size="960x720">
                                 <div class="divContent">
                                     <img src="./img/FaXiTemple/temple_3.jpg" itemprop="thumbnail" alt="Image description"/>
                                 </div>
                             </a>
                         </figure>
-                        <figure></figure> <!-- 用于换行 -->
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <br>
+                        <figure class="square_figure_3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/FaXiTemple/temple_4.jpg" itemprop="contentUrl" data-size="720x960">
                                 <div class="divContent">
                                     <img src="./img/FaXiTemple/temple_4.jpg" itemprop="thumbnail" alt="Image description"/>
                                 </div>
                             </a>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/FaXiTemple/temple_5.jpg" itemprop="contentUrl" data-size="720x960">
                                 <div class="divContent">
                                     <img src="./img/FaXiTemple/temple_5.jpg" itemprop="thumbnail" alt="Image description"/>
                                 </div>
                             </a>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/FaXiTemple/temple_6.jpg" itemprop="contentUrl" data-size="720x960">
                                 <div class="divContent">
                                     <img src="./img/FaXiTemple/temple_6.jpg" itemprop="thumbnail" alt="Image description"/>
                                 </div>
                             </a>
                         </figure>
-                        <figure></figure> <!-- 用于换行 -->
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <br>
+                        <figure class="square_figure_3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/FaXiTemple/temple_7.jpg" itemprop="contentUrl" data-size="960x720">
                                 <div class="divContent">
                                     <img src="./img/FaXiTemple/temple_7.jpg" itemprop="thumbnail" alt="Image description"/>
                                 </div>
                             </a>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/FaXiTemple/temple_8.jpg" itemprop="contentUrl" data-size="960x720">
                                 <div class="divContent">
                                     <img src="./img/FaXiTemple/temple_8.jpg" itemprop="thumbnail" alt="Image description"/>
                                 </div>
                             </a>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                        <figure class="square_figure_3" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/FaXiTemple/temple_9.jpg" itemprop="contentUrl" data-size="720x960">
                                 <div class="divContent">
                                     <img src="./img/FaXiTemple/temple_9.jpg" itemprop="thumbnail" alt="Image description"/>
@@ -263,5 +279,14 @@
         <script src="./assets/js-devportfolio/scripts.min.js"></script>
         <script src="./assets/js-canvas-nest/index.js"></script>
         <script src="./assets/js-photoswipe/photoshow.js"></script>
+        <script>
+            var width_2 = $(".square_figure_2").width();
+            $(".square_figure_2").css("height",width_2);
+            var width_3 = $(".square_figure_3").width();
+            $(".square_figure_3").css("height",width_3);
+            $(window).resize(function(){
+                location.reload();
+            });
+        </script>
     </body>
 </html>

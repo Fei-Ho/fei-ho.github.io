@@ -61,7 +61,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
           nodeIndex = 0,
           index;
       for (var i = 0; i < numChildNodes; i++) {
-          if(childNodes[i].nodeType !== 1) { 
+          if(childNodes[i].nodeType !== 1||childNodes[i].nodeName !== "FIGURE") { 
               continue; 
           }
           if(childNodes[i] === clickedListItem) {
