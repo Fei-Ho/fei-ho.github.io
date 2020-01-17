@@ -8,116 +8,260 @@
         <meta name="keywords" content="FeiHo,Photo">
         <meta name="author" content="Fei Ho">
         <title>Photo Gallery</title>
-        <link rel="stylesheet" type="text/css" href="./assets/css/vno.css">
-        <link rel="stylesheet" type="text/css" href="./assets/css/iconfont.css">
-        <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-        <link rel="icon" href="./favicon.ico">
-
+        
+        <!-- 时光轴的依赖 -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
         <link rel="stylesheet" href="./assets/libs/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="./assets/css-devportfolio/bootstrap.min.css">
         <link rel="stylesheet" href="./assets/css-devportfolio/styles.css">
+        
+        <!-- photo gallery的依赖 -->
+        <!-- Core CSS file -->
+        <link rel="stylesheet" href="./assets/css-photoswipe/photoswipe.css"> 
+        <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+            In the folder of skin CSS file there are also:
+            - .png and .svg icons sprite, 
+            - preloader.gif (for browsers that do not support CSS animations) -->
+        <link rel="stylesheet" href="./assets/css-photoswipe/default-skin/default-skin.css"> 
+        <!-- Core JS file -->
+        <script src="./assets/js-photoswipe/photoswipe.min.js"></script> 
+        <!-- UI JS file -->
+        <script src="./assets/js-photoswipe/photoswipe-ui-default.min.js"></script>
+        
         <style>
-          html{
-              height: 100%;
-          }
-          body{
-              margin: 0;
-              height: 100%;
-          }
-          canvas{
-            display: block;
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0.8;
-          }
+            /* canvas的style */
+            html{
+                height: 100%;
+            }
+            body{
+                margin: 0;
+                height: 100%;
+            }
+            canvas{
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                opacity: 0.6;
+            }
+            /*img展示用的style*/
+            .divContent{
+                width:90px;
+                height: 90px;
+                overflow:hidden;
+            }
+            .divContent img{
+                margin:0;
+                padding:0;
+                width:100%;
+                height: 100%;
+                object-fit: cover;
+            }
     </style>
     </head>
     <body>
-      <!-- <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </div>
-      <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#experience">Education Experience</a>
-            </li>
-            <li>
-                <a href="#education">Blog</a>
-            </li>
-            <li>
-                <a href="#projects">Resume</a>
-            </li>
-            <li>
-                <a href="temp.html">Photo Gallery</a>
-            </li>
-        </ul>
-      </header> -->
-      <div id="experience" >
-        <div id="experience-timeline">
-            <div data-date="1/12 2020">
-                <h3>Employer Name</h3>
-                <h4>Job Title</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                </p>
+        <!-- 每次放大图片的Container -->
+        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <!-- Background of PhotoSwipe. It's a separate element as animating opacity is faster than rgba(). -->
+            <div class="pswp__bg"></div>
+            <!-- Slides wrapper with overflow:hidden. -->
+            <div class="pswp__scroll-wrap">
+                <!-- Container that holds slides. PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                    Don't modify these 3 pswp__item elements, data is added later on. -->
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <!--  Controls are self-explanatory. Order can be changed. -->
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                        <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                        <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                        <!-- element will get class pswp__preloader--active when preloader is running -->
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div> 
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
             </div>
-
-            <div data-date="September 2015 – September 2016">
-                <h3>Employer Name</h3>
-                <h4>Job Title</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                </p>
-            </div>
-
-            <div data-date="September 2015 – September 2016">
-                <h3>Employer Name</h3>
-                <h4>Job Title</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                </p>
-            </div>
-
-            <div data-date="September 2015 – September 2016">
-              <h3>Employer Name</h3>
-              <h4>Job Title</h4>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-              </p>
-          </div>
-
-          <div data-date="September 2015 – September 2016">
-            <h3>Employer Name</h3>
-            <h4>Job Title</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-            </p>
         </div>
 
-        <div data-date="September 2015 – September 2016">
-          <h3>Employer Name</h3>
-          <h4>Job Title</h4>
-          <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-          </p>
-      </div>
-        </div>
-      </div>
-      <canvas id="canvas"></canvas>
+        <div id="experience">
+            <div id="experience-timeline">
+                <div data-date="<b>2020年01月05日23:30<br>杭州·湖滨步行街</b>">
+                    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/HangZhouHuBing/shop.jpg" itemprop="contentUrl" data-size="700x960">
+                                <div class="divContent">
+                                    <img src="./img/HangZhouHuBing/shop.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                            <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
+                        </figure>
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/HangZhouHuBing/light_street.jpg" itemprop="contentUrl" data-size="720x960">
+                                <div class="divContent">
+                                    <img src="./img/HangZhouHuBing/light_street.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                            <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
+                        </figure>
+                        <figure></figure> <!-- 用于换行 -->
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/HangZhouHuBing/cute_doll.jpg" itemprop="contentUrl" data-size="960x731">
+                                <div class="divContent">
+                                    <img src="./img/HangZhouHuBing/cute_doll.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                            <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
+                        </figure>
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/HangZhouHuBing/eat.jpg" itemprop="contentUrl" data-size="960x720">
+                                <div class="divContent">
+                                    <img src="./img/HangZhouHuBing/eat.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                            <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
+                        </figure>
+                    </div>
+                </div>
 
-      <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
-      <script src="./assets/js-devportfolio/scripts.min.js"></script>
-      <script src="./assets/js-canvas-nest/index.js"></script>
+                <div data-date="<b>2019年12月13日23:08<br>杭州·浙江理工大学·大剧院</b>">
+                    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/ShiJiaDaXueSheng/group_photo.jpg" itemprop="contentUrl" data-size="960x514">
+                                <div class="divContent">
+                                    <img src="./img/ShiJiaDaXueSheng/group_photo.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                            <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
+                        </figure>
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/ShiJiaDaXueSheng/love_monster.jpg" itemprop="contentUrl" data-size="960x847">
+                                <div class="divContent">
+                                    <img src="./img/ShiJiaDaXueSheng/love_monster.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                            <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
+                        </figure>
+                        <figure></figure> <!-- 用于换行 -->
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/ShiJiaDaXueSheng/turn_round.jpg" itemprop="contentUrl" data-size="568x400">
+                                <div class="divContent">
+                                    <img src="./img/ShiJiaDaXueSheng/turn_round.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                            <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
+                        </figure>
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/ShiJiaDaXueSheng/trophy.jpg" itemprop="contentUrl" data-size="720x960">
+                                <div class="divContent">
+                                    <img src="./img/ShiJiaDaXueSheng/trophy.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                            <figcaption style="text-align: center;" itemprop="caption description"></figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div data-date="<b>2019年12月19日12:27<br>杭州·上天竺·法喜寺</b>">
+                    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/FaXiTemple/temple_1.jpg" itemprop="contentUrl" data-size="720x960">
+                                <div class="divContent">
+                                    <img src="./img/FaXiTemple/temple_1.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                        </figure>
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/FaXiTemple/temple_2.jpg" itemprop="contentUrl" data-size="720x960">
+                                <div class="divContent">
+                                    <img src="./img/FaXiTemple/temple_2.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                        </figure>
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/FaXiTemple/temple_3.jpg" itemprop="contentUrl" data-size="960x720">
+                                <div class="divContent">
+                                    <img src="./img/FaXiTemple/temple_3.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                        </figure>
+                        <figure></figure> <!-- 用于换行 -->
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/FaXiTemple/temple_4.jpg" itemprop="contentUrl" data-size="720x960">
+                                <div class="divContent">
+                                    <img src="./img/FaXiTemple/temple_4.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                        </figure>
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/FaXiTemple/temple_5.jpg" itemprop="contentUrl" data-size="720x960">
+                                <div class="divContent">
+                                    <img src="./img/FaXiTemple/temple_5.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                        </figure>
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/FaXiTemple/temple_6.jpg" itemprop="contentUrl" data-size="720x960">
+                                <div class="divContent">
+                                    <img src="./img/FaXiTemple/temple_6.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                        </figure>
+                        <figure></figure> <!-- 用于换行 -->
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/FaXiTemple/temple_7.jpg" itemprop="contentUrl" data-size="960x720">
+                                <div class="divContent">
+                                    <img src="./img/FaXiTemple/temple_7.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                        </figure>
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/FaXiTemple/temple_8.jpg" itemprop="contentUrl" data-size="960x720">
+                                <div class="divContent">
+                                    <img src="./img/FaXiTemple/temple_8.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                        </figure>
+                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" style="display: inline-block;">
+                            <a href="./img/FaXiTemple/temple_9.jpg" itemprop="contentUrl" data-size="720x960">
+                                <div class="divContent">
+                                    <img src="./img/FaXiTemple/temple_9.jpg" itemprop="thumbnail" alt="Image description"/>
+                                </div>
+                            </a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <canvas id="canvas"></canvas>
+
+        <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+        <script src="./assets/js-devportfolio/scripts.min.js"></script>
+        <script src="./assets/js-canvas-nest/index.js"></script>
+        <script src="./assets/js-photoswipe/photoshow.js"></script>
     </body>
 </html>
