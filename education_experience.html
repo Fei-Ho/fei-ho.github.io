@@ -1,30 +1,248 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Meta, title, CSS, favicons, etc. -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Photo Gallery">
-        <meta name="keywords" content="FeiHo,Photo">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+        <meta name="description" content="Education Experience">
+        <meta name="keywords" content="FeiHo,Education Experience">
         <meta name="author" content="Fei Ho">
-        <title>Photo Gallery</title>
+        <title>Education Experience</title>
         <link rel="stylesheet" type="text/css" href="./assets/css/vno.css">
         <link rel="stylesheet" type="text/css" href="./assets/css/iconfont.css">
         <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-        <link rel="icon" href="./favicon.ico">
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
-        <link rel="stylesheet" href="./assets/libs/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="./assets/css-devportfolio/bootstrap.min.css">
-        <link rel="stylesheet" href="./assets/css-devportfolio/styles.css">
-    </style>
+        <style>
+            .panel-cover__divider {
+                width: 100%;
+                margin: 3px 0px 3px 0px;
+                border-top: 1px solid rgba(255, 255, 255, 1);
+            }
+
+            @media all and (max-width: 960px) {
+                .btn-mobile-menu {
+                    display: block;
+                }
+
+                .panel-main {
+                    display: table;
+                    position: relative;
+                }
+
+                .panel-cover--collapsed {
+                    width: 100%;
+                    max-width: none;
+                }
+
+                .panel-main__inner {
+                    display: table-cell;
+                    /* padding: 60px 10%; */
+                    padding: 60px 5%;
+                }
+
+                .panel-cover__description {
+                    display: block;
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+
+                .panel-cover__divider--secondary {
+                    display: none;
+                }
+
+                .panel-cover {
+                    width: 100%;
+                    height: 100%;
+                    background-position: center center;
+                }
+
+                .panel-cover.panel-cover--collapsed {
+                    display: block;
+                    position: relative;
+                    height: auto;
+                    padding: 0;
+                    background-position: center center;
+                }
+
+                .panel-cover.panel-cover--collapsed .panel-main__inner {
+                    display: block;
+                    padding: 70px 0 30px 0;
+                }
+
+                .panel-cover.panel-cover--collapsed .panel-cover__logo {
+                    width: 60px;
+                    border-width: 2px;
+                }
+
+                .panel-cover.panel-cover--collapsed .panel-cover__description {
+                    display: none;
+                }
+
+                .panel-cover.panel-cover--collapsed .panel-cover__divider {
+                    display: none;
+                    margin: 1em auto;
+                }
+
+                .navigation-wrapper {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    width: 100%;
+                    padding: 20px 0;
+                    background: rgba(51, 51, 51, 0.98);
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+                }
+
+                .navigation-wrapper.visible {
+                    display: block;
+                }
+
+                .cover-navigation {
+                    display: block;
+                    position: relative;
+                    float: left;
+                    clear: left;
+                    width: 100%;
+                }
+
+                .cover-navigation .navigation {
+                    display: block;
+                    width: 100%;
+                }
+
+                .cover-navigation .navigation li {
+                    width: 80%;
+                    margin-bottom: 0.4em;
+                }
+
+                .cover-navigation.navigation--social {
+                    padding-top: 5px;
+                }
+
+                .cover-navigation.navigation--social .navigation li {
+                    display: inline-block;
+                    width: 20%;
+                }
+
+                .content-wrapper {
+                    width: 80%;
+                    max-width: none;
+                    margin: 0 auto;
+                }
+
+                .content-wrapper__inner {
+                    margin-right: 0;
+                    margin-left: 0;
+                }
+
+                .navigation__item {
+                    width: 100%;
+                    margin: 0 0 0.4em 0;
+                }
+            }
+
+            .a_left{
+                float: left;
+                width: fit-content;
+                /* text-align: left; */
+            }
+            .a_right{
+                float: right;
+                width: max-content;
+                /* text-align: right; */
+            }
+            .a_center{
+                text-align: center;
+            }
+            .panel-inverted {
+                font-weight: 100;
+                text-align: left;
+                color: #fff;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+            }
+            p {
+                margin-bottom: 0em;
+                line-height: 1.7em;
+            }
+            .line{
+                margin-top: 5px;
+            }
+        </style>
     </head>
-    <body>
-      
 
-        
-      <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
-      <script src="./assets/js-devportfolio/scripts.min.js"></script>
-      <script src="./assets/js-canvas-nest/index.js"></script>
+    <body id="panel" class="panel-cover">
+        <header id="panel" class="panel-cover">
+            <div class="panel-main">
+                <div class="panel-main__inner panel-inverted">
+                    <div class="panel-main__content">
+                        <div class="iUp" style="display: flex;">
+                            <div style="flex:1;text-align: left;"><strong>浙江理工大学-启新学院</strong></div>
+                            <div style="text-align: right;"><strong>2016年9月-2020年6月</strong></div>
+                        </div>
+                        <hr class="panel-cover__divider"/>
+                        <div class="iUp" style="display: flex;">
+                            <div style="flex:1;text-align: left;">理工实验班-计算机科学与技术</div>
+                            <div style="text-align: right;">杭州</div>
+                        </div>
+                        <div class="iUp">
+                            <br/>
+                            <div><strong>·</strong>&nbsp;GPA: 4.18/5.0 (1/46)</div>
+                            <br/>
+                        </div>
+                        <div class="iUp">
+                            <div>连续三年绩点/综合测评第一；</div>
+                            <div class="line">保送浙江大学计算机科学与技术学院硕士研究生。</div>
+                        </div>
+                        <hr class="panel-cover__divider iUp" style="margin-top: 5px; border-top:1px white dashed;"/>
+                        <div class="iUp">
+                            <div class="line"><strong>奖项 & 荣誉</strong></div>
+                            <div class="line"><strong>·</strong>&nbsp;奖学金</div>
+                            <div class="line">2018-2019学年十佳大学生</div>
+                            <div class="line">2018-2019学年国家奖学金</div>
+                            <div class="line">2016-2017学年卓越人才奖学金</div>
+                            <div class="line">16-17/17-18学年浙江省政府奖学金</div>
+                            <div class="line">16-17/17-18学年优秀学生一等奖学金</div>
+
+                            <div class="line"><strong>·</strong>&nbsp;竞赛</div>
+                            <div class="line">2019年美国大学生数学建模竞赛一等奖--Problem C: The Opioid Crisis</div>
+                            <div class="line">2019年第十届中国大学生服务外包创新创业大赛国家三等奖--人脸识别智能会议室系统</div>
+                            <div class="line">2018年第十届全国大学生数学竞赛三等奖</div>
+                            <div class="line">2019年挑战杯全国大学生课外学术科技作品竞赛浙江省一等奖--MC智能裙装秒出系统</div>
+                            <div class="line">2019年浙江“海康杯”大学生服务外包创新竞赛一等奖</div>
+                            <div class="line">2017年浙江省高等数学竞赛(工科类)二等奖</div>
+                        </div>
+                        <hr class="panel-cover__divider iUp" style="margin-top: 5px; border-top:1px white dashed;"/>
+                        <div class="iUp">
+                            <div class="line"><strong>科研经历</strong></div>
+                            <div class="line"><strong>·</strong>&nbsp;国家级大学生创新创业训练计划</div>
+                            <div class="line">“基于区块链技术的慈善捐赠系统”(2017.6 - 2019.5), 本项目已结题, 并被评为优秀项目。期间本人以第一作者发表学术论文一篇、获得软件著作权一项。</div>
+                        </div>
+                        <hr class="panel-cover__divider iUp" style="margin-top: 5px; border-top:1px white dashed;"/>
+                        <div class="iUp">
+                            <div class="line"><strong>软件著作权</strong></div>
+                            <div class="line"><strong>·</strong>&nbsp;基于LSTM的股市预测软件</div>
+                            <div class="line"><strong>·</strong>&nbsp;区块链浏览器</div>
+                            <div class="line"><strong>·</strong>&nbsp;裙装纸样自动生成软件</div>
+                        </div>
+
+                        <div class="line"><strong>·</strong>&nbsp;竞赛</div>
+                        <div class="line">2019年美国大学生数学建模竞赛一等奖--Problem C: The Opioid Crisis</div>
+                        <div class="line">2019年第十届中国大学生服务外包创新创业大赛国家三等奖--人脸识别智能会议室系统</div>
+                        <div class="line">2018年第十届全国大学生数学竞赛三等奖</div>
+                        <div class="line">2019年挑战杯全国大学生课外学术科技作品竞赛浙江省一等奖--MC智能裙装秒出系统</div>
+                        <div class="line">2019年浙江“海康杯”大学生服务外包创新竞赛一等奖</div>
+                        <div class="line">2017年浙江省高等数学竞赛(工科类)二等奖</div>
+
+                    </div>
+                </div>
+                <div class="panel-cover--overlay cover-slate"></div>
+            </div>
+        </header>
+        <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="./assets/js/fetch.min.js"></script>
+        <script type="text/javascript" src="./assets/js/main.js"></script>
     </body>
 </html>
