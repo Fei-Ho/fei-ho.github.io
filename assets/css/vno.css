@@ -1,7 +1,8 @@
 /*头像效果-start*/
 
 html {
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+  font-family:Arial,'Times New Roman','Microsoft YaHei',SimHei;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%
 }

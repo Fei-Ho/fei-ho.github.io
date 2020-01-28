@@ -380,7 +380,8 @@ footer {
 	right: auto;
 	height: 100%;
 	width: 3px;
-	background: #3498db;
+	/* background: #3498db; */
+	background:#A9A9A9;
 	z-index: 0
 }
 
@@ -389,8 +390,10 @@ footer {
 	content: '';
 	width: 3px;
 	height: 40px;
-	background: #3498db;
-	background: linear-gradient(to bottom, #3498db, rgba(52,152,219,0));
+	/* background: #3498db; */
+	background:#A9A9A9;
+	/* background: linear-gradient(to bottom, #3498db, rgba(52,152,219,0)); */
+	background: linear-gradient(to bottom, #A9A9A9, rgba(52,152,219,0));
 	top: 100%;
 	left: 303px
 }
