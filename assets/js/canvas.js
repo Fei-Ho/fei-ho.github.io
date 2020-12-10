@@ -161,17 +161,25 @@ class Heart {
   }
   update() {
     // bounces
-    if (this.x + 55 * this.scale > innerWidth || this.x - 55 * this.scale < 0) {
+    // if (this.x + 55 * this.scale > innerWidth || this.x - 55 * this.scale < 0) {
+    //   this.dx = -this.dx
+    // }
+    // if (this.y + 62 * this.scale > innerHeight || this.y - 62 * this.scale < 0) {
+    //   this.dy = -this.dy
+    // }
+    if (this.x + 25 * this.scale > innerWidth || this.x - 25 * this.scale < 0) {
       this.dx = -this.dx
     }
-    if (this.y + 62 * this.scale > innerHeight || this.y - 62 * this.scale < 0) {
+    if (this.y + 30 * this.scale > innerHeight || this.y - 30 * this.scale < 0) {
       this.dy = -this.dy
     }
     this.x += this.dx
     this.y += this.dy
     // interactivity
-    if (mouse.x - this.x < 40 && mouse.x - this.x > -40
-      && mouse.y - this.y < 40 && mouse.y - this.y > -40) {
+    // if (mouse.x - this.x < 40 && mouse.x - this.x > -40
+    //   && mouse.y - this.y < 40 && mouse.y - this.y > -40) {
+    if (mouse.x - this.x < 20 && mouse.x - this.x > -20
+      && mouse.y - this.y < 20 && mouse.y - this.y > -20) {
       if (this.scale < maxScale) {
         this.scale += .03
       }
