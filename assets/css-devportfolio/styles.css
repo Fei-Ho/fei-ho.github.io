@@ -381,7 +381,8 @@ footer {
 	height: 100%;
 	width: 3px;
 	/* background: #3498db; */
-	background:#A9A9A9;
+	/* #A9A9A9 */
+	background:#FFD700;
 	z-index: 0
 }
 
@@ -389,11 +390,11 @@ footer {
 	position: absolute;
 	content: '';
 	width: 3px;
-	height: 40px;
+	height: 80px;
 	/* background: #3498db; */
-	background:#A9A9A9;
+	background:#FFD700;
 	/* background: linear-gradient(to bottom, #3498db, rgba(52,152,219,0)); */
-	background: linear-gradient(to bottom, #A9A9A9, rgba(52,152,219,0));
+	background: linear-gradient(to bottom, #FFD700, rgba(52,152,219,0));
 	top: 100%;
 	left: 303px
 }
@@ -441,7 +442,7 @@ footer {
 	color: #fff;
 	width: 50px;
 	height: 50px;
-	background: #A9A9A9;
+	background: #FFD700;
 	border-radius: 50%;
 	float: left;
 	z-index: 99;
