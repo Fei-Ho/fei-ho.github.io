@@ -17,50 +17,60 @@ const colorArray = [
   '#fe9d54',
   '#9ad1fe'
 ]
+
+// const heartMsgArr = [
+//   '#\nLOVE',
+//   'Smile',
+//   'Me +\nYou',
+//   'In The\nMood',
+//   'Heart\nThrob',
+//   '143',
+//   'OOH\nLa La',
+//   'Crazy\n4 U',
+//   'Wink\nWink',
+//   'Sweet\nStuff',
+//   'Soul\nMate',
+//   'Sweet\nTalk',
+//   'True\nLove',
+//   '#\nLOVE',
+//   'LIVE N\nLOVE',
+//   'Be\nHappy',
+//   'Giggle',
+//   'Angle',
+//   'Hug\nMe',
+//   'YOU\n& I',
+//   'Miss\nYou',
+//   'My\nLove',
+//   'Say\nYES',
+// ]
+
 const heartMsgArr = [
-  '#\nLOVE',
-  'LIVE N\nLOVE',
-  'BE\nHAPPY',
-  'GIGGLE',
-  'ANGEL',
-  'ASK\nME',
-  'QT\nPIE',
-  'FIRST\nKISS',
-  'HUG\nME',
-  'LOVE\nBUG',
-  'LOVE\nME',
-  'I LOVE\nYOU',
-  'MARRY\nME',
-  'YOU\n& I',
-  'MISS\nYOU',
-  'MY\nLOVE',
-  'SAY\nYES',
-  'SMILE',
-  'SOUL\nMATE',
-  'SWEET\nTALK',
-  'TRUE\nLOVE',
-  'LET\'S\nKISS',
-  'MELT\nMY <3',
-  'SWEET\nSTUFF',
-  'OCCUPY\nMY <3',
-  'TEXT\nME',
-  'TWEET',
-  'WINK\nWINK',
-  'BE\nMINE',
-  'CRAZY\n4 U',
-  'OOH\nLA LA',
-  'U R\nHOT',
-  'CALL\nME',
-  '143',
-  'REAL\n<3',
-  'KISS\nME',
-  'HEART\nTHROB',
-  'HOT\nDAWG',
-  'IN THE\nMOOD',
-  'ME +\nYOU',
-  'YUM\nYUM',
-  'YOU\nROCK'
+  'Wink\nWink',
+  '你是踩碎星光\n落入我梦境的\n一袋幻想',
+  '山野千里,你是我\n藏在星星里的浪漫',
+  '我只在做一件事的\n时候想你,那就是呼吸',
+  '我可能是盐吃多了,\n闲的总是想你',
+  '今天的天气很好\n适合打打闹闹\n更适合亲亲抱抱',
+  '你算哪只小猪猪\n在这里嘟嘟嘟',
+  '你去银河偷点星星\n做我宇宙飞船的燃料',
+  '一起看日出吧！',
+  '喜欢你的时候\n总恨不得\n日夜翻书三百章',
+  '我超有趣的\n我可有意思了\n你看看我吧',
+  '煎雪落雨\n心上是你\n欢喜躲在眉目里',
+  '请你马上从我眼前\n消失，来我心里！',
+  '林深时见鹿\n海蓝时见鲸\n梦醒时见你',
+  '生命太短暂\n不能空手而归',
+  '等风来\n不如追风去',
+  '南风知我意\n吹梦到西洲',
+  '浮世三千\n吾爱有三\n日，月与卿',
+  '日为朝\n月为暮\n卿为朝朝暮暮',
+  '独见了你\n见花开笑颜\n见海湛如眸',
+  '情不知所起\n一往而深',
+  '我不知道我有多喜欢你\n但如果是去见你\n我一定是用跑的',
+  '相见亦无事情\n别来常忆君',
+  '白茶清欢无别事\n我在等风也等你'
 ]
+
 // set total hearts based on screen area (max 600)
 let totalHearts = Math.floor((window.innerHeight * window.innerWidth) / 1500)
 if (totalHearts > 600) {
@@ -141,8 +151,10 @@ class Heart {
     c.bezierCurveTo((10 * this.scale + this.x), (-15 * this.scale + this.y), (0 * this.scale + this.x), (-3 * this.scale + this.y), (0 * this.scale + this.x), (20 * this.scale + this.y));
     c.fillStyle = this.color
     c.fill();
-    c.fillStyle = "#f00"
-    c.font = `${this.scale * 20}px Arial, Helvetica, sans-serif`
+    // c.fillStyle = "#f00"
+    c.fillStyle = "#800080"
+    // c.fillStyle = "#9932CC"
+    c.font = `${this.scale * 12}px Arial, Helvetica, sans-serif`
     c.textAlign = 'center'
     c.textBaseline = "top"
     fillTextMultiLine(c, this.msg, this.x, this.y)
