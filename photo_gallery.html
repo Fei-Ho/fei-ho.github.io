@@ -7,7 +7,26 @@
         <meta name="description" content="Photo Gallery">
         <meta name="keywords" content="FeiHo,Photo">
         <meta name="author" content="Fei Ho">
-        <title>Photo Gallery</title>
+        <title>Memorable Moments</title>
+        <!-- sweet heart -->
+        <link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="./icons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+        <link rel="manifest" href="./manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
         
         <!-- 时光轴的依赖 -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
@@ -34,9 +53,12 @@
             /* canvas的style */
             html{
                 height: 100%;
+                width: 100%;
+                margin: 0;
             }
             body{
                 margin: 0;
+                width: 100%;
                 height: 100%;
             }
             canvas{
@@ -49,6 +71,7 @@
                 z-index: -1;
                 opacity: 0.6;
             }
+            
             /*img展示用的style*/
             .square_figure_1{
                 width: 50%;
@@ -81,9 +104,10 @@
                 height:100%;
                 object-fit: cover;
             }
-    </style>
+        </style>
     </head>
     <body>
+        
         <!-- 每次放大图片的Container -->
         <!-- Root element of PhotoSwipe. Must have class pswp. -->
         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -131,19 +155,6 @@
 
         <div id="experience">
             <div id="experience-timeline">
-                
-                <div data-date="<b>2020年11月05日19:00<br>杭州·曹骥体育大关游泳健身中心</b>">
-                    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-                        <p style="color: black;"><b>今天和小口袋一起打了羽毛球。</b></p>
-                        <p style="color: black;"><b>小口袋的羽毛球好厉害！</b></p>
-                    </div>
-                </div>
-
-                <div data-date="<b>2020年10月28日15:30<br>杭州·浙江大学玉泉曹光彪</b>">
-                    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-                        <p style="color: black;"><b>今天是和小口袋的第一次见面！</b></p>
-                    </div>
-                </div>
 
                 <!-- <div data-date="<b>2020年01月05日23:30<br>杭州·湖滨步行街</b>">
                     <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
@@ -698,11 +709,14 @@
 
             </div>
         </div>
-        <!-- <canvas id="canvas"></canvas> -->
+        
+        <canvas id='canvas'></canvas>
+        <script src="./assets/js/canvas.js"></script>
+        
 
         <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
         <script src="./assets/js-devportfolio/scripts.min.js"></script>
-        <script src="./assets/js-canvas-nest/index.js"></script>
+        <!-- <script src="./assets/js-canvas-nest/index.js"></script> --> <!-- 知乎离子背景特效 --> 
         <script src="./assets/js-photoswipe/photoshow.js"></script>
         <script>
             var width_2 = $(".square_figure_2").width();
