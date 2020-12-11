@@ -27,6 +27,12 @@
         <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
+        <!-- 透明 -->
+        <link rel="stylesheet" type="text/css" href="./assets/css/vno.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/iconfont.css">
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+        <link rel="icon" href="./favicon.ico">
+        
         
         <!-- 时光轴的依赖 -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
@@ -42,6 +48,7 @@
             - .png and .svg icons sprite, 
             - preloader.gif (for browsers that do not support CSS animations) -->
         <link rel="stylesheet" href="./assets/css-photoswipe/default-skin/default-skin.css"> 
+        <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
         <!-- Core JS file -->
         <script src="./assets/js-photoswipe/photoswipe.min.js"></script> 
         <!-- UI JS file -->
@@ -106,8 +113,9 @@
             }
         </style>
     </head>
-    <body style="background-color: #FFE4E1;">
-        
+    <body id="panel" style="z-index: -1;">
+        <!-- <div id="panel"  style="z-index: -1;width: 100%;height: 100%;position: fixed;top: 0;left: 0;"> -->
+
         <!-- 每次放大图片的Container -->
         <!-- Root element of PhotoSwipe. Must have class pswp. -->
         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -194,7 +202,7 @@
                     </div>
                 </div> -->
 
-                <div data-date="<b>2019年12月13日23:08<br>杭州·浙江理工大学·大剧院</b>">
+                <div data-date="<span style='color:#ffffff'>2019年12月13日23:08<br>杭州·浙江理工大学·大剧院</span>">
                     <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
                         <figure class="square_figure_2" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                             <a href="./img/ShiJiaDaXueSheng/group_photo.jpg" itemprop="contentUrl" data-size="960x514">
@@ -710,8 +718,15 @@
             </div>
         </div>
         
-        <canvas id='canvas'></canvas>
-        <script src="./assets/js/canvas.js"></script>
+        <!-- <canvas id='canvas'></canvas>
+        <script src="./assets/js/canvas.js"></script> -->
+
+        <div class="panel-cover--overlay cover-slate" style="z-index: -1;display: block;
+        width: 100%;height: 100%;position: fixed;top: 0;left: 0;opacity: 0.3;"></div>
+        </div>
+        <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="./assets/js/fetch.min.js"></script>
+        <script type="text/javascript" src="./assets/js/main.js"></script>
         
 
         <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
