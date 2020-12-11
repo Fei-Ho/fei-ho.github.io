@@ -73,8 +73,11 @@ const heartMsgArr = [
 
 // set total hearts based on screen area (max 600)
 let totalHearts = Math.floor((window.innerHeight * window.innerWidth) / 1500)
-if (totalHearts > 600) {
-  totalHearts = 600
+// if (totalHearts > 600) {
+//   totalHearts = 600
+// }
+if (totalHearts > 50) {
+  totalHearts = 50
 }
 // add event listeners for mouse, touch, and screen resize
 window.addEventListener('mousemove', function (event) {
