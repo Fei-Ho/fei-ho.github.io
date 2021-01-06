@@ -162,6 +162,13 @@
             </div>
         </div>
 
+        <div class="content" style="text-align: center;">
+            <h3 style="color:rgb(253, 99, 125);"><b>小鹿，我们已经相恋了</b></h3>
+            <div class="timer" style="color: white;">
+                <b id="d"></b> 天 <b id="h"></b> 时 <b id="m"></b> 分 <b id="s"></b> 秒
+            </div>
+        </div>
+
         <div id="experience">
             <div id="experience-timeline">
                 
@@ -872,6 +879,35 @@
             $(".square_figure_2").css("height",width_2);
             var width_3 = $(".square_figure_3").width();
             $(".square_figure_3").css("height",width_3);
+        </script>
+        <script>
+            function timer() {
+                var start = new Date(2020, 11, 23);
+                var t = (new Date() - start);
+                // var t = (new Date() - start);
+                // var h = ~~(t / 1000 / 60 / 60 % 24);
+                var h = parseInt(t / 1000 / 60 / 60 % 24);
+                if (h < 10) {
+                    h = "0" + h;
+                }
+                // var m = ~~(t / 1000 / 60 % 60);
+                var m = parseInt(t / 1000 / 60 % 60);
+                if (m < 10) {
+                    m = "0" + m;
+                }
+
+                // var s = ~~(t / 1000 % 60);
+                var s = parseInt(t / 1000 % 60);
+                if (s < 10) {
+                    s = "0" + s;
+                }
+                document.getElementById('d').innerHTML = parseInt(t / 1000 / 60 / 60 / 24);
+                document.getElementById('h').innerHTML = h;
+                document.getElementById('m').innerHTML = m;
+                document.getElementById('s').innerHTML = s;
+            }
+            timer();
+            setInterval(timer, 1000);
         </script>
         <script>
             // $(window).resize(function(){
