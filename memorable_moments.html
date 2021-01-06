@@ -55,6 +55,8 @@
         <script src="./assets/js-photoswipe/photoswipe-ui-default.min.js"></script>
         <!-- emoji -->
         <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+        <!-- Valine无后端评论系统 -->
+        <script src='./assets/js/Valine.min.js'></script>
         
         <style>
             /* canvas的style */
@@ -168,6 +170,10 @@
                 <b id="d"></b> 天 <b id="h"></b> 时 <b id="m"></b> 分 <b id="s"></b> 秒
             </div>
         </div>
+        <br>
+        <p style="text-align: center;">
+            <a id="to_comments" class="btn btn-primary btn-sm" role="button">留个言叭</a>
+        </p>
 
         <div id="experience">
             <div id="experience-timeline">
@@ -860,6 +866,14 @@
 
             </div>
         </div>
+        <div class="container-fluid" id="comments">
+            <div class="row comment">
+                <div class="col-xs-10 col-sm-10 col-md-6 col-xs-push-1 col-sm-push-1 col-md-push-3">
+                    <h5 style="color: white;">留言：</h5>
+                    <div id="vcomments" style="color: white;background-color: rgba(0, 0, 0, 0.5); border: 0;padding: 0;"></div>
+                </div>
+            </div>
+        </div>
         
         <canvas id='canvas'></canvas>
         <script src="./assets/js/canvas.js"></script>
@@ -882,7 +896,7 @@
         </script>
         <script>
             function timer() {
-                var start = new Date(2020, 11, 23);
+                var start = new Date(2020, 11, 23,22,00,00);
                 var t = (new Date() - start);
                 // var t = (new Date() - start);
                 // var h = ~~(t / 1000 / 60 / 60 % 24);
@@ -908,6 +922,42 @@
             }
             timer();
             setInterval(timer, 1000);
+        </script>
+        <script>
+            var oComments = document.querySelector("#comments");
+            var oCommentsTop = Math.round(oComments.offsetTop);
+            //运动框架
+            function move() {
+                // 1. 关闭开启定时器;
+                clearInterval(timer);
+                var timer = setInterval(function () {
+                    // 2. 计算速度;
+                    var iNow = document.documentElement.scrollTop || document.body.scrollTop; //100
+                    iNow = Math.round(iNow);
+                    var speed = (oCommentsTop - iNow) / 10;
+                    // 3. 速度取整;
+                    if (speed > 0) {
+                        speed = Math.ceil(speed);
+                    } else {
+                        speed = Math.floor(speed);
+                    }
+                    document.documentElement.scrollTop = document.body.scrollTop = iNow + speed + 1;
+                    // 4. 终止条件;
+                    if (iNow >= oCommentsTop) {
+                        clearInterval(timer);
+                    }
+                }, 20);
+            }
+    
+            to_comments.onclick = move;
+        </script>
+        <!-- Valine 评论系统； 由 LeanCloud 管理数据 -->
+        <script>
+            new Valine({
+                el: '#vcomments',
+                appId: '6ciYmApgvhB3B0UVFg2alMWN-gzGzoHsz',
+                appKey: 'uxnwfpC9njTvyMKof3lUK02g'
+            })
         </script>
         <script>
             // $(window).resize(function(){
